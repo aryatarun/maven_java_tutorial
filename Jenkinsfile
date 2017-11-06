@@ -9,10 +9,11 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
+                bat 'set M2_HOME=C:\\opt\\Maven'
                 bat '''
                     echo "PATH = %PATH%"
                     echo "JAVA_HOME = %JAVA_HOME%"
-                    "set M2_HOME=C:\\opt\\Maven"
+                    
                     echo "M2_HOME = %M2_HOME%"
                 '''
             }
