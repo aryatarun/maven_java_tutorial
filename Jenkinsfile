@@ -11,6 +11,7 @@ pipeline {
             steps {
                 bat '''
                     echo "PATH = %PATH%"
+                    echo "JAVA_HOME = %JAVA_HOME%"
                     echo "M2_HOME = %M2_HOME%"
                 '''
             }
@@ -18,7 +19,9 @@ pipeline {
 
         stage ('Build') {
             steps {
-                    bat 'cd NumberGenerator & mvn install'
+                bat set JAVA_HOME=C:\Jenkins\tools\hudson.model.JDK\java8
+                bat echo "JAVA_HOME = %JAVA_HOME%"
+                bat 'cd NumberGenerator & mvn install'
             }
              post {
                 success {
