@@ -19,7 +19,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                bat 'set JAVA_HOME=C:\Jenkins\tools\hudson.model.JDK\java8'
+                
                 bat 'echo "JAVA_HOME = %JAVA_HOME%"'
                 bat 'cd NumberGenerator & mvn install'
             }
