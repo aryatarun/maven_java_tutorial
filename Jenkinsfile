@@ -1,6 +1,6 @@
 pipeline {
     agent {
-            label "10.157.109.48"
+            label "Windows"
           } 
     tools {
         maven 'Maven3.3.9'
